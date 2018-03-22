@@ -84,10 +84,10 @@ form
 <img class="img-responsive" alt="login" id="logpic" src="./Images/login.jpeg">
 </div>
 <div class="form">
-<form class="">
+<form class="" action="Login" method="post">
   <div class="form-group">
     <label for="formGroupExampleInput">UserName</label>
-    <input type="text" class="form-control" id="name" name="name" placeholder="insert your name" required>
+    <input type="email" class="form-control" id="memberID" name="memberID" placeholder="insert your email as user name" required>
   </div>
   <div class="form-group">
     <label for="formGroupExampleInput2">Password</label><a style="float: right">Forgot Password?</a>

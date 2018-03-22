@@ -1,3 +1,5 @@
+<%@page import="com.ourProject1.login.model.Login"%>
+<%@page import ="java.sql.*" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -20,9 +22,22 @@
 
 </head>
 <body>
+<%
+response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate");
+Login lg=(Login)session.getAttribute("mess");
+if(lg.getName()==null){
+	response.sendRedirect("Login.jsp");
+}
+%>
+
+<div class="apple">
+<form action="Logout">
+<input class="btn-danger" type="submit" value="Logout">
+</form>
+</div>
 
 <div class="container">
-    <h1 class="well">Hi "his name here from full name"</h1>
+    <h1 class="well">Hi ${name}</h1>
 	<div class="col-lg-12 well">
 	<div class="row">
 				<form>
@@ -30,7 +45,7 @@
 						<div class="row">
 							<div class="col-sm-6 form-group">
 								<label>My Name</label>
-								<input type="text" class="form-control">
+								<input type="text" class="form-control" disabled="disabled">
 							</div>
 						</div>					
 						<div class="form-group">

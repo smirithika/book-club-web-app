@@ -1,3 +1,5 @@
+<%@page import="com.ourProject1.login.model.Login"%>
+<%@page import ="java.sql.*" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -35,6 +37,16 @@ input[type=text] {
 input[type=text]:focus {
     width: 100%;
 }
+
+   .apple{
+   position: fixed;
+   left:0;
+   top:0;
+   width: 100%;
+   background-color: green;
+   color: white;
+   text-align: center
+   }
 </style>
 
 
@@ -59,12 +71,27 @@ function myFunction() {
 </script>
 </head>
 <body>
+<%
+	response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate");
 
-<br><br><br>
+	Login lg=(Login)session.getAttribute("mess");
+		if(lg.getName()==null){
+				response.sendRedirect("Login.jsp");
+			}
+		
+		
+%>
+
+<div class="apple">
+<form action="Logout">
+<input class="btn-danger" type="submit" value="Logout">
+</form>
+</div>
+<br/><br/><br/>
 <div>
 <input class="name" type="text" id="myInput" onkeyup="myFunction()" placeholder="Search Using Id..." title="Type in a name">
 </div>
-<br><br>
+<br/><br/>
 <div class="table-responsive">
 <table class="table" id="myTable">
   <tr class="header">
