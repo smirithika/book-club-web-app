@@ -1,4 +1,5 @@
 <%@page import="com.ourProject1.login.model.Login"%>
+<%@page import ="java.sql.*" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -94,35 +95,48 @@ if(lg.getName()==null){
 <div class="table-responsive">
 <table class="table" id="myTable">
   <tr class="header">
-    <th >C001</th>
     <th>FullName</th>
-     <th >DofBirth</th>
-      <th >CurrentAddress</th>
-       <th >PermanentAddress</th>
+     <th >Date of Birth</th>
+      <th >Current Address</th>
+       <th >Permanent Address</th>
         <th >Mobile</th>
-         <th >TPhoneNo</th>
+         <th >Telephone No</th>
           <th >Interests</th>
   </tr>
-  <tr>
-    <td>C002</td>
-    <td>Germany</td>
-     <td>Germany</td>
-      <td>Germany</td>
-       <td>Germany</td>
-        <td>Germany</td>
-         <td>Germany</td>
-          <td>Germany</td>
-  </tr>
-  <tr>
-  <td>Arshad</td>
-   <td>the </td>
-    <td>hfdjf</td>
-     <td>djfhakf</td>
-      <td>skjaisf</td>
-       <td>make</td>
-        <td>bj</td>
-         <td>saata</td>
-  </tr>
+  <%
+  try{
+	  Class.forName("com.mysql.jdbc.Driver");
+	  String url="jdbc:mysql://localhost:3306/book";
+	  String username="root";
+	  String password="";
+	  String query="select * from member";
+	  Connection conn=DriverManager.getConnection(url, username, password);
+	  Statement stmt=conn.createStatement();
+	  ResultSet rs=stmt.executeQuery(query);
+	  while(rs.next())
+	  {
+		  System.out.println(rs.getString(1));
+		  %>
+		  <tr>
+		  <td><%=rs.getString(2)+" "+rs.getString(3)%></td>
+		  <td><%=rs.getDate(4)%></td>
+		  <td><%=rs.getString(5) %></td>
+		  <td><%=rs.getString(6) %></td>
+		  <td><%=rs.getString(7) %></td>
+		   <td><%=rs.getString(8) %></td>
+		  </tr>
+		   <%
+	  }
+	  rs.close();
+	  stmt.close();
+	  conn.close();
+  }
+  catch(Exception e)
+  {
+  e.printStackTrace();
+  }
+  %>
+  
 </table>
 
 </div>

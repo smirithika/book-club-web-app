@@ -30,10 +30,9 @@ public class LoginDao {
 			}
 			
 		} catch (Exception e) {
-			System.out.print("this is not connected");
+			e.printStackTrace();
 		}
 		
 		return l;
 	}
-
 }

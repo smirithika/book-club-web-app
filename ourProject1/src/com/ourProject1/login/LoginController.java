@@ -2,7 +2,7 @@ package com.ourProject1.login;
 
 import java.io.IOException;
 
-import javax.security.auth.message.callback.PrivateKeyCallback.Request;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -26,8 +26,6 @@ public class LoginController extends HttpServlet {
 		
 		LoginDao ld=new LoginDao();
 		Login lg=ld.getUserName(memberID);
-		
-		
 		if(memberID.equals(lg.getEmail()) && Pass.equals(lg.getPass())) {
 			HttpSession session=request.getSession();
 			session.setAttribute("mess",lg);

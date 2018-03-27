@@ -41,34 +41,51 @@ if(lg.getName()==null){
 	<div class="col-lg-12 well">
 	<div class="row">
 				<form>
+				  <%
+  try{
+	  Class.forName("com.mysql.jdbc.Driver");
+	  String url="jdbc:mysql://localhost:3306/book";
+	  String username="root";
+	  String password="";
+	  String query="select * from member";
+	  Connection conn=DriverManager.getConnection(url, username, password);
+	  Statement stmt=conn.createStatement();
+	  ResultSet rs=stmt.executeQuery(query);
+	  while(rs.next())
+	  {
+		  %>
 					<div class="col-sm-12">
 						<div class="row">
 							<div class="col-sm-6 form-group">
-								<label>My Name</label>
-								<input type="text" class="form-control" disabled="disabled">
+								<label>First Name</label>
+								<input type="text" class="form-control" disabled="disabled" value="<%=rs.getString(2)%>">
+							</div>
+							<div class="col-sm-6 form-group">
+								<label>Last Name</label>
+								<input type="text" class="form-control" disabled="disabled" value="<%=rs.getString(3)%>">
 							</div>
 						</div>					
 						<div class="form-group">
 							<label>Permanent Address</label>
-							<textarea " rows="3" class="form-control"></textarea>
+							<textarea " rows="3" class="form-control" value="<%=rs.getString(4)%>"></textarea>
 						</div>	
 						<div class="form-group">
 							<label>Current Address</label>
-							<textarea rows="3" class="form-control"></textarea>
+							<textarea rows="3" class="form-control" value="<%=rs.getString(5)%>"></textarea>
 						</div>	
 						<div class="row">
 							<div class="col-sm-6 form-group">
 								<label>Mobile</label>
-								<input type="text" class="form-control">
+								<input type="text" class="form-control" value="<%=rs.getString(6)%>">
 							</div>		
 							<div class="col-sm-6 form-group">
 								<label>HomeTP No</label>
-								<input type="text"  class="form-control">
+								<input type="text"  class="form-control" value="<%=rs.getString(7)%>">
 							</div>	
 						</div>							
 					<div class="form-group">
 						<label>Email Address</label>
-						<input type="email"  class="form-control">
+						<input type="email"  class="form-control" value="<%=rs.getString(8)%>">
 					</div>
 					<div>
 					<label>Tick your Interest:</label>
@@ -120,6 +137,17 @@ if(lg.getName()==null){
 					<div>	
 					<button type="button" style="margin-left: 30%;padding-right: 20%;padding-left: 20%" class="btn btn-danger">Update</button>					
 					</div>
+		<%
+	  }
+	  rs.close();
+	  stmt.close();
+	  conn.close();
+  }
+  catch(Exception e)
+  {
+  e.printStackTrace();
+  }
+  %>
 				</form> 
 				</div>
 	</div>

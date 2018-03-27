@@ -71,16 +71,6 @@ function myFunction() {
 </script>
 </head>
 <body>
-<%
-	response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate");
-
-	Login lg=(Login)session.getAttribute("mess");
-		if(lg.getName()==null){
-				response.sendRedirect("Login.jsp");
-			}
-		
-		
-%>
 
 <div class="apple">
 <form action="Logout">
@@ -93,27 +83,46 @@ function myFunction() {
 </div>
 <br/><br/>
 <div class="table-responsive">
+
 <table class="table" id="myTable">
   <tr class="header">
     <th>FullName</th>
        <th >PermanentAddress</th>
         <th >Mobile</th>
           <th >Interests</th>
-  </tr>
-  <tr>
-    <td>C002</td>
-    <td>Germany</td>
-     <td>Germany</td>
-      <td>Germany</td>
-       
-  </tr>
-  <tr>
-  <td>Arshad</td>
-   <td>the </td>
-    <td>hfdjf</td>
-     <td>djfhakf</td>
-      
-  </tr>
+  </tr>	
+  <%
+  try{
+	  Class.forName("com.mysql.jdbc.Driver");
+	  String url="jdbc:mysql://localhost:3306/book";
+	  String username="root";
+	  String password="";
+	  String query="select * from member";
+	  Connection conn=DriverManager.getConnection(url, username, password);
+	  Statement stmt=conn.createStatement();
+	  ResultSet rs=stmt.executeQuery(query);
+	  while(rs.next())
+	  {
+		  System.out.println(rs.getString(1));
+		  %>
+		  <tr>
+		  <td><%=rs.getString(2)+" "+rs.getString(3)%></td>
+		  <td><%=rs.getString(5) %></td>
+		  <td><%=rs.getString(7) %></td>
+		  </tr>
+		   <%
+	  }
+	  rs.close();
+	  stmt.close();
+	  conn.close();
+  }
+  
+  catch(Exception e)
+  {
+  e.printStackTrace();
+  }
+  %>
+
 </table>
 
 </div>
