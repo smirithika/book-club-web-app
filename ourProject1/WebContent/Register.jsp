@@ -291,17 +291,29 @@
 					<div class="col-sm-12">
 						<div class="row">
 							<div class="col-sm-6 form-group">
-								<label>Full Name</label>
-								<input type="text" placeholder="Enter Full Name here.." class="form-control">
+								<label>First Name</label>
+								<input type="text" placeholder="Enter Full Name here.." name="fname" class="form-control">
 							</div>
-						</div>					
+						</div>		
+						<div class="row">
+							<div class="col-sm-6 form-group">
+								<label>Last Name</label>
+								<input type="text" placeholder="Enter Full Name here.." name="lname" class="form-control">
+							</div>
+						</div>	
+						<div class="row">
+							<div class="col-sm-6 form-group">
+								<label>Date of Birth</label>
+								<input type="date" name="DoB" class="form-control">
+							</div>
+						</div>										
 						<div class="form-group">
 							<label>Permanent Address</label>
-							<textarea placeholder="Enter Premenant Address Here.." rows="3" class="form-control"></textarea>
+							<textarea placeholder="Enter Premenant Address Here.." rows="3" name="p_address" class="form-control"></textarea>
 						</div>	
 						<div class="form-group">
 							<label>Current Address</label>
-							<textarea placeholder="Enter Current Address Here.." rows="3" class="form-control"></textarea>
+							<textarea placeholder="Enter Current Address Here.." rows="3" name="c_address" class="form-control"></textarea>
 						</div>	
 						<div class="row">
 							<div class="col-sm-6 form-group">
@@ -309,63 +321,66 @@
 								<input type="text" placeholder="Mobile No.." class="form-control">
 							</div>		
 							<div class="col-sm-6 form-group">
-								<label>HomeTP No</label>
-								<input type="text" placeholder="Home Telephone No.." class="form-control">
+								<label>Home Tel No</label>
+								<input type="text" placeholder="Home Telephone No.." name="home_tel" class="form-control">
 							</div>	
 						</div>							
 					<div class="form-group">
 						<label>Email Address</label>
-						<input type="email" placeholder="Enter Email Address Here.." class="form-control">
+						<input type="email" placeholder="Enter Email Address Here.." name="email" class="form-control">
 					</div>
 					<div>
-					<label>Tick your Interest:</label>
+					<label>Tick your Interests:</label>
 					
 		           <div class="checkbox checkbox-success">
-                    <input id="AI" name="AI" type="checkbox">
+                    <input id="checkbox3" type="checkbox"  name="selected" value="Artificial Intelligence">
                       <label for="checkbox3">
-                            Artificial Interligence
+                            Artificial Intelligence
                        </label>
                      </div>
                       <div class="checkbox checkbox-success">
-                    <input id="checkbox3" type="checkbox">
+                    <input id="checkbox3" type="checkbox"  name="selected" value="image processing">
                       <label for="checkbox3">
                             Image Processing
                        </label>
                      </div>
                       <div class="checkbox checkbox-success">
-                    <input id="checkbox3" type="checkbox">
+                    <input id="checkbox3" type="checkbox"  name="selected" value="middle ware">
                       <label for="checkbox3">
                           Middle Ware
                        </label>
                      </div>
                       <div class="checkbox checkbox-success">
-                    <input id="checkbox3" type="checkbox">
+                    <input id="checkbox3" type="checkbox"  name="selected" value="art">
                       <label for="checkbox3">
                             Art
                        </label>
                      </div>
                       <div class="checkbox checkbox-success">
-                    <input id="checkbox3" type="checkbox">
+                    <input id="checkbox3" type="checkbox"  name="selected" value="science fiction">
                       <label for="checkbox3">
                             Science Fiction
                        </label>
                      </div>
                       <div class="checkbox checkbox-success">
-                    <input id="checkbox3" type="checkbox">
+                    <input id="checkbox3" type="checkbox"  name="selected" value="politics">
                       <label for="checkbox3">
                            Politics
                        </label>
                      </div>
                      <div class="checkbox checkbox-success">
-                    <input id="checkbox3" type="checkbox">
+                    <input id="checkbox3" type="checkbox" name="selected" value="religion">
                       <label for="checkbox3">
-                            Relegion
+                            Religion
                        </label>
                      </div>
             
 					</div>
 					<div>	
-					<button type="button" style="margin-left: 30%;padding-right: 20%;padding-left: 20%" class="btn btn-lg btn-info">Submit</button>					
+					<!-- 
+					<button type="button" value="register" style="margin-left: 30%;padding-right: 20%;padding-left: 20%" class="btn btn-lg btn-info">Submit</button>
+					-->
+					<input type="submit" class="form-control" id="submit" value="submit">
 					</div>
 				</form> 
 				</div>

@@ -99,7 +99,10 @@ form
   </div>
   <div class="form-group" style="text-align: center">
   <br>
-  <a>Register New User</a>
+  <!-- <a>Register New User</a>
+  	<input type="button" class="form-control" id="submit" value="Register New User">
+  -->
+ 	 <a class="button" href="Register.jsp">Register New User</a>
   </div>
 </form>
 </div>
