@@ -287,48 +287,58 @@
     <h1 class="well">WelCome New User</h1>
 	<div class="col-lg-12 well">
 	<div class="row">
-				<form>
+				<form action="Register" method="post">
 					<div class="col-sm-12">
 						<div class="row">
 							<div class="col-sm-6 form-group">
 								<label>First Name</label>
-								<input type="text" placeholder="Enter Full Name here.." name="fname" class="form-control">
+								<input type="text" class="form-control" name="fname" id="fn" placeholder="Enter First Name here..." required>
+								
 							</div>
 						</div>		
-						<div class="row">
+					 	<div class="row">
 							<div class="col-sm-6 form-group">
 								<label>Last Name</label>
-								<input type="text" placeholder="Enter Full Name here.." name="lname" class="form-control">
+								<input type="text" class="form-control" name="lname" id="ln" placeholder="Enter Last Name here..." required>
 							</div>
 						</div>	
 						<div class="row">
 							<div class="col-sm-6 form-group">
 								<label>Date of Birth</label>
-								<input type="date" name="DoB" class="form-control">
+								<input type="date" class="form-control" name="DoB" id="dob" placeholder="Enter Your Birth Date" required>
 							</div>
 						</div>										
 						<div class="form-group">
 							<label>Permanent Address</label>
-							<textarea placeholder="Enter Premenant Address Here.." rows="3" name="p_address" class="form-control"></textarea>
+							<input type="text" class="form-control" name="p_address" id="p_add" placeholder="Enter Premenant Address Here.." required>
 						</div>	
 						<div class="form-group">
 							<label>Current Address</label>
-							<textarea placeholder="Enter Current Address Here.." rows="3" name="c_address" class="form-control"></textarea>
+							<input type="text" class="form-control" name="c_address" id="c_add" placeholder="Enter Current Address Here.." required>
 						</div>	
 						<div class="row">
 							<div class="col-sm-6 form-group">
 								<label>Mobile</label>
-								<input type="text" placeholder="Mobile No.." class="form-control">
+								<input type="text" class="form-control" name="mobile" id="mob" placeholder="Mobile No.." required>
+								
 							</div>		
 							<div class="col-sm-6 form-group">
 								<label>Home Tel No</label>
-								<input type="text" placeholder="Home Telephone No.." name="home_tel" class="form-control">
+								<input type="text" class="form-control" name="home_tel" id="h_tel" placeholder="Home Telephone No.." required>
 							</div>	
 						</div>							
 					<div class="form-group">
 						<label>Email Address</label>
-						<input type="email" placeholder="Enter Email Address Here.." name="email" class="form-control">
+						<input type="email" placeholder="Enter Email Address Here.." name="email" class="form-control" required/>
 					</div>
+					<div class="form-group">
+					    <label>Password</label>
+					    <input type="password" class="form-control" name="pwd" id="pass" placeholder="Enter new password" required>
+					  </div>
+					 <div class="form-group">
+					    <label>Confirm Password</label>
+					    <input type="password" class="form-control" name="con_pwd" id="conpass" placeholder="Re-enter password" required>
+				  	</div>
 					<div>
 					<label>Tick your Interests:</label>
 					
@@ -377,9 +387,6 @@
             
 					</div>
 					<div>	
-					<!-- 
-					<button type="button" value="register" style="margin-left: 30%;padding-right: 20%;padding-left: 20%" class="btn btn-lg btn-info">Submit</button>
-					-->
 					<input type="submit" class="form-control" id="submit" value="submit">
 					</div>
 				</form> 

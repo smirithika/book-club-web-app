@@ -1,4 +1,4 @@
-package com.ourProject1.register;
+package com.ourProject1.userView;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -13,12 +13,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.ourProject1.encrypt.perform;
+import com.ourProject1.register.RegisterDao;
 
 /**
- * Servlet implementation class RegisterController
+ * Servlet implementation class UserViewController
  */
-@WebServlet("/Register")
-public class RegisterController extends HttpServlet {
+@WebServlet("/UserView")
+public class UserViewController extends HttpServlet {
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html;charset=UTF-8");
@@ -86,14 +87,13 @@ public class RegisterController extends HttpServlet {
 	        out.println("</script>");
 		}
 		else {
-			RegisterDao Rd=new RegisterDao();
-			Rd.registerDetails(fname,lname, sqlStartDate, pAddress, cAddress, mobNo, homeNo, email,perform.encrypt(pwd),select);
+//			RegisterDao Rd=new RegisterDao();
+//			Rd.registerDetails(fname,lname, sqlStartDate, pAddress, cAddress, mobNo, homeNo, email,perform.encrypt(pwd),select);
 			out.println("<script type=\"text/javascript\">");
 	        out.println("alert('Register Successful !!');");
 	        out.println("location='index.jsp';");
 	        out.println("</script>");
 		}
 	}
-	}
 
-
+}

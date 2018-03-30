@@ -55,6 +55,12 @@
     <artifactId>jstl</artifactId>
     <version>1.2</version>
 </dependency>
+<!-- https://mvnrepository.com/artifact/org.apache.tomcat/tomcat-util -->
+<dependency>
+    <groupId>org.apache.tomcat</groupId>
+    <artifactId>tomcat-util</artifactId>
+    <version>8.0.0-RC1</version>
+</dependency>
 
   
   
