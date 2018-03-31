@@ -77,7 +77,7 @@ form
 </head>
 <body>
 <div class="header">
-<p><b>Book Club</b></p>
+<p><b>Book Club Web App</b></p>
 </div>
 <div class="col-md-12">
 <div>
@@ -90,21 +90,22 @@ form
     <input type="email" class="form-control" id="memberID" name="memberID" placeholder="insert your email as user name" required>
   </div>
   <div class="form-group">
-    <label for="formGroupExampleInput2">Password</label><a style="float: right" href="forgotPw.jsp">Forgot Password?</a>
+    <label for="formGroupExampleInput2">Password</label><a style="float: right">Forgot Password?</a>
     <input type="password" class="form-control" name="pass" id="pass" placeholder="insert your password" required>
   </div>
-  <a style="float: right" href="changePw.jsp">Change Password?</a>
   <div>
   <br>
   <input type="submit" class="form-control" id="submit" value="login">
   </div>
   <div class="form-group" style="text-align: center">
   <br>
-  <a>Register New User</a>
+  <!-- <a>Register New User</a>
+  	<input type="button" class="form-control" id="submit" value="Register New User">
+  -->
+ 	 <a class="button" href="Register.jsp">Register New User</a>
   </div>
 </form>
 </div>
 </div>
-
 </body>
 </html>
