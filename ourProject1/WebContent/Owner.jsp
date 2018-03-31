@@ -1,3 +1,6 @@
+<%@page import="java.util.List"%>
+<%@page import="java.util.*"%>
+
 <%@page import="com.ourProject1.login.model.Login"%>
 <%@page import ="java.sql.*" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
@@ -110,13 +113,26 @@ if(lg.getName()==null){
 	  String url="jdbc:mysql://localhost:3306/book";
 	  String username="root";
 	  String password="";
+	  
+	 
 	  String query="select * from member";
 	  Connection conn=DriverManager.getConnection(url, username, password);
 	  Statement stmt=conn.createStatement();
 	  ResultSet rs=stmt.executeQuery(query);
 	  while(rs.next())
 	  {
-		  System.out.println(rs.getString(1));
+		  //
+		 List<String> asd=new ArrayList<String>();
+		 int x=Integer.parseInt(rs.getString(1));
+		  System.out.println(x);
+		  String query2="select * from interest i where i.mid = ?";
+		  PreparedStatement st=conn.prepareStatement(query2);
+		  st.setInt(1,x);
+		  ResultSet rss=st.executeQuery();
+		  while(rss.next()){
+			  asd.add(rss.getString(2));
+			  
+		  }
 		  %>
 		  <tr>
 		  <td><%=rs.getString(2)+" "+rs.getString(3)%></td>
@@ -125,9 +141,18 @@ if(lg.getName()==null){
 		  <td><%=rs.getString(6) %></td>
 		  <td><%=rs.getString(7) %></td>
 		   <td><%=rs.getString(8) %></td>
+		   <td><%
+		   Iterator<String> iterator = asd.iterator();
+		    while (iterator.hasNext()) {    
+		        out.println(iterator.next()+" ,");
+		    }
+		    asd.clear();
+		   
+		   %></td>
 		  </tr>
 		   <%
-	  }
+		  }
+	  
 	  rs.close();
 	  stmt.close();
 	  conn.close();

@@ -1,8 +1,6 @@
 package com.ourProject1.encrypt;
 
 
-import com.mysql.cj.api.log.Log;
-import com.mysql.cj.core.log.LogFactory;
 
 
 import javax.crypto.Cipher;
