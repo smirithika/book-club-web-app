@@ -7,8 +7,8 @@ Smirithika.C IT16514614
 
 Note:
 Admin and Owner have default passwords.passwords are given below
-	Owner => Arshad
-	Admin => book
+	Owner => "Arshad"
+	Admin => "book"
 these passwords are encrypted.
 
 Thank you...
