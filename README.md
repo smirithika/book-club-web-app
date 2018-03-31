@@ -6,9 +6,9 @@ Gowshalini.R IT16113800,
 Smirithika.C IT16514614
 
 Note:
-Admin and Owner have default passwords.passwords are given below
+Admin and Owner have default passwords.Passwords are given below
 	Owner => "Arshad"
 	Admin => "book"
-these passwords are encrypted.
+These passwords are encrypted.
 
 Thank you...
