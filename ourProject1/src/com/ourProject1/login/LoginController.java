@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.ourProject1.encrypt.perform;
 import com.ourProject1.login.dao.LoginDao;
 import com.ourProject1.login.model.Login;
 
@@ -23,12 +24,15 @@ public class LoginController extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String memberID=request.getParameter("memberID");
 		String Pass=request.getParameter("pass");
-		
 		LoginDao ld=new LoginDao();
 		Login lg=ld.getUserName(memberID);
-		if(memberID.equals(lg.getEmail()) && Pass.equals(lg.getPass())) {
+		if(memberID.equals(lg.getEmail()) && Pass.equals(perform.decrypt(lg.getPass()))) {
 			HttpSession session=request.getSession();
 			session.setAttribute("mess",lg);
+			
+			session.setAttribute("globEmail", memberID);
+			String em=(String)session.getAttribute("globEmail");
+			
 			if(lg.getU_type().equals("owner")) {
 			response.sendRedirect("Owner.jsp");
 			}

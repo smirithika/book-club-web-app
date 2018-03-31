@@ -84,6 +84,7 @@ if(lg.getName()==null){
 <div class="apple">
 <form action="Logout">
 <input class="btn-danger" type="submit" value="Logout">
+<a style="float: right; color:white" href="changePw.jsp">Change Password</a>
 </form>
 </div>
 
